@@ -1,0 +1,364 @@
+<?xml version="1.0" standalone="no"?>
+
+<unit>
+	<parameters>
+		<size value="1"/>
+		<height value="2"/>
+		<max-hp value="1400" regeneration="5"/>
+		<max-ep value="200" regeneration="3"/>
+		<armor value="40"/>	
+		<armor-type value="organic"/>
+		<sight value="20"/>
+		<time value="100"/>
+		<multi-selection value="true"/>	
+		<cellmap value="false"/>
+		<levels>
+			<level name="hungry" kills="4"/>
+			<level name="voracious" kills="8"/>
+			<level name="devourer" kills="12"/>
+		</levels>
+		<fields>
+			<field value="air"/>
+		</fields>	
+		<properties/>
+		<light enabled="false"/>
+		<unit-requirements/>
+		<upgrade-requirements/>
+		<resource-requirements>
+			<resource name="gold" amount="100"/>
+			<resource name="wood" amount="100"/>
+			<resource name="people" amount="50"/>
+			<resource name="food" amount="-150"/>
+		</resource-requirements>
+		<resources-stored/>
+		<resources-death>
+			<resource name="people" amount-value="5" loss-value="0" allow-negative="false" />
+		</resources-death>
+		<image path="images/dragon.bmp"/>
+		<image-cancel path="../snake_warrior/images/magic_cancel.bmp"/>
+		<meeting-point value="false"/>
+		<selection-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select4.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select5.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select6.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select7.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select8.wav"/>					
+			<sound path="$COMMONDATAPATH/sounds/cudgel_select9.wav"/>	
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack4.wav"/>		
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack5.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack6.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack7.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/cudgel_ack8.wav"/>
+		</command-sounds>
+	</parameters>
+
+	<skills>
+	
+		<skill>
+			<type value="stop"/>
+			<name value="stop_skill"/>
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="100"/>
+			<animation path="models/dragon_standing_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_move1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move4.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="stop"/>
+			<name value="stop_loaded_skill"/>
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="100"/>
+			<animation path="models/dragon_standing_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_move1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move4.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_skill"/>
+			<ep-cost value="0"/>
+			<speed value="240"/>
+			<anim-speed value="120"/>
+			<animation path="models/dragon_walking_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_move1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move4.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_loaded_skill"/>
+			<ep-cost value="0"/>
+			<speed value="60"/>
+			<anim-speed value="30"/>
+			<animation path="models/dragon_walking_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_move1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move4.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="harvest"/>
+			<name value="eat_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="20"/>
+			<anim-speed value="60"/>
+			<animation path="models/dragon_attacking_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_harvest1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_harvest2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_harvest3.wav"/>
+			</sound>
+			<particles value="true">
+				<particle-file path="particle_harvest.xml"/>
+			</particles>
+		</skill>
+
+		<skill>
+			<type value="attack"/>
+			<name value="human_shot_skill"/>		
+			<ep-cost value="20"/>
+			<speed value="60"/>
+			<anim-speed value="50"/>
+			<animation path="models/dragon_attacking_loaded.g3d"/>
+			<sound enabled="true" start-time="0.4">
+				<sound-file path="$COMMONDATAPATH/sounds/acid_attack1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/acid_attack2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/acid_attack3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/acid_attack4.wav"/>
+			</sound>
+			<attack-strenght value="200"/>
+			<attack-var value="80"/>
+			<attack-range value="6"/>
+			<attack-type value="organic"/>
+			<attack-fields>
+				<field value="land"/>
+				<field value="air"/>
+			</attack-fields>
+			<attack-start-time value="0.5"/>
+			<projectile value="true">
+				<particle value="true" path="particle_proj.xml"/>
+				<sound enabled="true">
+					<sound-file path="$COMMONDATAPATH/sounds/dragon_hit1.wav"/>
+					<sound-file path="$COMMONDATAPATH/sounds/dragon_hit2.wav"/>
+					<sound-file path="$COMMONDATAPATH/sounds/dragon_hit3.wav"/>
+					<sound-file path="$COMMONDATAPATH/sounds/dragon_hit4.wav"/>
+				</sound>
+			</projectile>
+			<splash value="true">
+				<radius value="3"/>
+				<damage-all value="false"/>
+				<particle value="true" path="particle_splash.xml"/>
+			</splash>
+		</skill>
+
+		<skill>
+			<type value="produce"/>
+			<name value="produce_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="250"/>
+			<anim-speed value="30"/>
+			<animation path="models/dragon_attacking_loaded.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="produce"/>
+			<name value="digest_produce_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="100"/>
+			<anim-speed value="40"/>
+			<animation path="models/dragon_attacking_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_digest1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_digest2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_digest3.wav"/>
+			</sound>
+			<particles value="true">
+				<particle-file path="particle_build.xml"/>
+			</particles>
+		</skill>
+
+		<skill>
+			<type value="repair"/>
+			<name value="digest_repair_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="100"/>
+			<anim-speed value="40"/>
+			<animation path="models/dragon_attacking_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_digest1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_digest2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_digest3.wav"/>
+			</sound>
+			<particles value="true">
+				<particle-file path="particle_build.xml"/>
+			</particles>
+		</skill>
+
+		<skill>
+			<type value="morph"/>
+			<name value="morph_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="800"/>
+			<anim-speed value="20"/>
+			<animation path="models/dragon_attacking_loaded.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/people_move1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/people_move4.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="die"/>
+			<name value="die_skill"/>	
+			<ep-cost value="0"/>
+			<speed value="120"/>
+			<anim-speed value="120"/>
+			<animation path="models/dragon_dying_loaded.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/cudgel_die1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/cudgel_die2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/cudgel_die3.wav"/>	
+				<sound-file path="$COMMONDATAPATH/sounds/cudgel_die4.wav"/>	
+			</sound>
+			<fade value="true"/>
+			<spawn start-time="0.5">
+				<unit value="skeleton"/>
+				<amount value="7"/>
+				<health-percent min="25" max="100"/>
+				<probability value="50"/>
+			</spawn>
+		</skill>
+
+	</skills>
+
+	<!-- *** commands *** -->
+	
+	<commands>
+		
+		<command>
+			<type value="stop"/>
+			<name value="stop"/>
+			<image path="../snake_warrior/images/magic_stop.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+		</command>
+
+		<command>
+			<type value="move"/>
+			<name value="move"/>
+			<image path="../snake_warrior/images/magic_move.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+		</command>
+
+		<command>
+			<type value="attack"/>
+			<name value="human_shot"/>
+			<image path="images/dragon_attack.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<attack-skill value="human_shot_skill"/>
+		</command>
+
+		<command>
+			<type value="attack_stopped"/>
+			<name value="hold_position"/>
+			<image path="../snake_warrior/images/magic_hold.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+			<attack-skill value="human_shot_skill"/>
+		</command>
+
+		<command>
+			<type value="harvest"/>
+			<name value="eat"/>
+			<image path="images/dragon_eat.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<harvest-skill value="eat_skill"/>
+			<stop-loaded-skill value="stop_loaded_skill"/>
+			<move-loaded-skill value="move_loaded_skill"/>
+			<harvested-resources>
+				<resource name="people"/>
+			</harvested-resources>
+			<max-load value="15"/>
+			<hits-per-unit value="1"/>				
+		</command>
+
+		<command>
+			<type value="repair"/>
+			<name value="heal"/>
+			<image path="../snake_warrior/images/magic_repair.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<repair-skill value="digest_repair_skill"/>
+			<repaired-units>
+				<unit name="naked_human"/>
+				<unit name="skinned_human"/>
+				<unit name="skeleton"/>
+				<unit name="bone_golem"/>
+			</repaired-units>		
+		</command>
+
+		<command>
+			<type value="produce"/>
+			<name value="digest"/>
+			<image path="images/dragon_digest.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<produce-skill value="digest_produce_skill"/>
+			<produced-unit name="skeleton"/>
+			<start-sound enabled="false"/>
+			<built-sound enabled="false"/>
+		</command>
+
+		<command>
+			<type value="produce"/>
+			<name value="reproduce" />
+			<image path="../../upgrades/reproduction/images/reproduction.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements>
+				<upgrade name="reproduction"/>
+			</upgrade-requirements>
+			<produce-skill value="produce_skill"/>
+			<produced-unit name="dragon_warrior"/>
+		</command>
+
+	</commands>
+</unit>

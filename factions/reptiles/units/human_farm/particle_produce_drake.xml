@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<unit-particle-system>
+    <texture value="true" path="images/archmage_particle.bmp" luminance="true"/>
+	<primitive value="quad"/>
+	<offset x="-1.25" y="1.25" z="0"/>
+	<direction x="0" y="1" z="0"/>
+	<color red="0.25" green="0.25" blue="0.25" alpha="0.5" />
+	<color-no-energy red="0.25" green="0.25" blue="0.25" alpha="0.25" />
+    	<radius value="0.25" />
+    	<size value="0.1" />
+    	<size-no-energy value="0.5" />
+    	<speed value="1" />
+	<gravity value="0.75"/>
+    	<emission-rate value="1" />
+    	<energy-max value="25" />
+    	<energy-var value="10" />
+	<relative value="true" />
+	<relativeDirection value="true" />
+    	<fixed value="false" />
+    	<teamcolorNoEnergy value="false" />
+    	<teamcolorEnergy value="false" />
+	<trajectory type="spiral">
+		<speed value="14.0"/>
+		<scale value="1"/>
+		<frequency value="2"/>
+	</trajectory>
+</unit-particle-system>

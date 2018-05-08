@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="no" ?>
+<unit>
+	<!-- *** parameters *** -->
+	<parameters>
+		<size value="4" />
+		<height value="2" />
+		<max-hp value="8000" regeneration="0"/>
+		<max-ep value="0" />
+		<armor value="50" />
+		<armor-type value="stone"/>				
+		<sight value="15" />
+		<time value="200" />
+		<multi-selection value="false" />
+		<cellmap value="true">
+			<row value="1111" /> 
+			<row value="1001" /> 
+			<row value="1001" /> 
+			<row value="1001" />
+		</cellmap>
+		<levels/>
+		<fields>
+			<field value="land" />
+		</fields>
+		<properties>
+			<property value="burnable"/>
+		</properties>
+		<light enabled="true" red="0.4" green="0.8" blue="0.6"/>
+		<rotationAllowed value="false" />
+		<unit-requirements />
+		<upgrade-requirements />
+		<resource-requirements>
+			<resource name="gold" amount="300" />
+			<resource name="wood" amount="350" />
+		</resource-requirements>
+		<resources-stored>
+			<resource name="gold" amount="3000" />
+			<resource name="wood" amount="2500" />
+			<resource name="food" amount="250" />
+			<resource name="people" amount="50" />
+		</resources-stored>
+		<resources-death>
+			<resource name="gold" amount-percentage="10" loss-percentage="10" allow-negative="false" />
+			<resource name="wood" amount-percentage="10" loss-percentage="10" allow-negative="false" />
+		</resources-death>
+		<image path="images/den.bmp"/>
+		<image-cancel path="../snake_warrior/images/magic_cancel.bmp"/>
+		<meeting-point value="true" image-path="images/meeting_point.bmp"/>
+		<selection-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/tech_click.wav"/>
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/tech_click.wav"/>
+		</command-sounds>
+	</parameters>
+	
+	<!-- *** skills *** -->
+	<skills>
+
+		<skill>
+			<type value="be_built" />
+			<name value="be_built_skill"/>		
+			<ep-cost value="0" />
+			<speed value="120"/>
+			<speed value="120"/>
+			<anim-speed value="50" />
+			<animation path="models/whalehouse_construction.g3d" />
+			<sound enabled="false" />
+		</skill>
+		
+		<skill>
+			<type value="stop" />
+			<name value="stop_skill"/>		
+			<ep-cost value="0" />
+			<speed value="300" />
+			<anim-speed value="50" />
+			<animation path="models/whalehouse.g3d" />
+			<sound enabled="false" />
+		</skill>	
+		
+		<skill>
+			<type value="produce" />
+			<name value="produce_skill"/>		
+			<ep-cost value="0" />
+			<speed value="300" />
+			<anim-speed value="50" />
+			<animation path="models/whalehouse.g3d" />
+			<sound enabled="false" />
+		</skill>	
+		
+		<skill>
+			<type value="die" />
+			<name value="die_skill"/>		
+			<ep-cost value="0" />
+			<speed value="300" />
+			<anim-speed value="300" />
+			<animation path="models/whalehouse_destroyed.g3d" />
+			<particles value="true">
+				<particle-file path="glow_particles.xml"/>
+				<particle-file path="smoke_particles.xml"/>
+			</particles>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/tech_building_fall3.wav"/>
+			</sound>			
+			<fade value="false"/>
+		</skill>
+
+	</skills>
+	
+	<!-- *** commands *** -->
+	<commands>
+
+		<command>
+			<type value="produce"/>
+			<name value="produce_roach" />
+			<image path="../roach/images/roach.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<produce-skill value="produce_skill"/>
+			<produced-unit name="roach"/>
+		</command>
+
+	</commands>
+</unit>

@@ -1,0 +1,352 @@
+<?xml version="1.0" standalone="no"?>
+
+<unit>
+	<parameters>
+		<size value="1"/>
+		<height value="2"/>
+		<max-hp value="800" regeneration="5"/>
+		<max-ep value="0" regeneration="0"/>
+		<armor value="25"/>	
+		<armor-type value="leather"/>
+		<sight value="10"/>
+		<time value="30"/>	
+		<multi-selection value="true"/>	
+		<cellmap value="false"/>
+		<levels/>
+		<fields>
+			<field value="land"/>
+		</fields>	
+		<properties/>
+		<light enabled="false"/>
+		<unit-requirements>
+		</unit-requirements>
+		<upgrade-requirements/>
+		<resource-requirements>
+			<resource name="gold" amount="50"/>
+			<resource name="wood" amount="25"/>
+			<resource name="food" amount="5"/>
+		</resource-requirements>
+		<resources-stored/>
+		<image path="images/roach.bmp"/>
+		<image-cancel path="../snake_warrior/images/magic_cancel.bmp"/>
+		<meeting-point value="false"/>
+		<selection-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/archmage_select1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_select2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_select3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_select4.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_select5.wav"/>
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/archmage_ack1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_ack2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_ack3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_ack4.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_ack5.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_ack6.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/archmage_ack7.wav"/>
+		</command-sounds>
+	</parameters>
+
+	<skills>
+		<skill>
+			<type value="stop"/>
+			<name value="stop_skill"/>
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="60"/>
+			<animation path="models/roach_standing.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="stop"/>
+			<name value="stop_loaded_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="75"/>
+			<anim-speed value="40"/>
+			<animation path="models/roach_standing.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="stop"/>
+			<name value="stop_loaded_wood_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="75"/>
+			<anim-speed value="40"/>
+			<animation path="models/roach_standing.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_skill"/>
+			<ep-cost value="0"/>
+			<speed value="280"/>
+			<anim-speed value="320"/>
+			<animation path="models/roach_walking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_wood_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="280"/>
+			<anim-speed value="320"/>
+			<animation path="models/roach_walking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_gold_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="280"/>
+			<anim-speed value="320"/>
+			<animation path="models/roach_walking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_loaded_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="240"/>
+			<anim-speed value="280"/>
+			<animation path="models/roach_walking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_loaded_wood_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="240"/>
+			<anim-speed value="280"/>
+			<animation path="models/roach_walking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="harvest"/>
+			<name value="mine_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="160"/>
+			<anim-speed value="100"/>
+			<animation path="models/roach_attacking.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/worker_mine1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/worker_mine2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/worker_mine3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/worker_mine4.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/worker_mine5.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/worker_mine6.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="harvest"/>
+			<name value="harvest_wood_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="160"/>
+			<anim-speed value="100"/>
+			<animation path="models/roach_attacking.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/worker_harvest_wood1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/worker_harvest_wood2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/worker_harvest_wood3.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="attack"/>
+			<name value="dung_attack_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="80"/>
+			<anim-speed value="60"/>
+			<animation path="models/roach_attacking.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack4.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack6.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack8.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack11.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack12.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack13.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack15.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_attack16.wav"/>
+			</sound>
+			<attack-strenght value="40"/>
+			<attack-var value="20"/>
+			<attack-range value="5"/>
+			<attack-type value="impact"/>
+			<attack-fields>
+				<field value="land"/>
+			</attack-fields>
+			<attack-start-time value="0.2"/>
+			<projectile value="true">
+				<particle value="true" path="particle_proj.xml"/>
+				<sound enabled="true">
+					<sound-file path="$COMMONDATAPATH/sounds/archmage_hit1.wav"/>
+					<sound-file path="$COMMONDATAPATH/sounds/archmage_hit2.wav"/>
+					<sound-file path="$COMMONDATAPATH/sounds/archmage_hit3.wav"/>
+					<sound-file path="$COMMONDATAPATH/sounds/archmage_hit4.wav"/>
+				</sound>
+			</projectile>
+			<splash value="true">
+				<radius value="2"/>
+				<damage-all value="false"/>
+				<particle value="true" path="particle_splash.xml"/>
+			</splash>
+		</skill>
+
+		<skill>
+			<type value="build"/>
+			<name value="build_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="100"/>
+			<anim-speed value="100"/>
+			<animation path="models/roach_attacking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="repair"/>
+			<name value="repair_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="100"/>
+			<anim-speed value="100"/>
+			<animation path="models/roach_attacking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="die"/>
+			<name value="die_skill"/>	
+			<ep-cost value="0"/>
+			<speed value="120"/>
+			<anim-speed value="60"/>
+			<animation path="models/roach_dying.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_die1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/archmage_die2.wav"/>
+			</sound>
+			<fade value="false"/>
+		</skill>
+
+	</skills>
+
+	<!-- *** commands *** -->
+	
+	<commands>
+		
+		<command>
+			<type value="stop"/>
+			<name value="stop"/>
+			<image path="../snake_warrior/images/magic_stop.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+		</command>
+
+		<command>
+			<type value="move"/>
+			<name value="move"/>
+			<image path="../snake_warrior/images/magic_move.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+		</command>
+
+		<command>
+			<type value="attack"/>
+			<name value="dung_attack"/>
+			<image path="images/roach_attack.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<attack-skill value="dung_attack_skill"/>
+		</command>
+
+		<command>
+			<type value="harvest"/>
+			<name value="mine"/>
+			<image path="../snake_warrior/images/magic_harvest.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_gold_skill"/>
+			<harvest-skill value="mine_skill"/>
+			<stop-loaded-skill value="stop_loaded_skill"/>
+			<move-loaded-skill value="move_loaded_skill"/>
+			<harvested-resources>
+				<resource name="gold"/>									
+			</harvested-resources>
+			<max-load value="20"/>
+			<hits-per-unit value="1"/>				
+		</command>
+
+		<command>
+			<type value="harvest"/>
+			<name value="harvest_wood"/>
+			<image path="../snake_warrior/images/magic_harvest_wood.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_wood_skill"/>
+			<harvest-skill value="harvest_wood_skill"/>
+			<stop-loaded-skill value="stop_loaded_wood_skill"/>
+			<move-loaded-skill value="move_loaded_wood_skill"/>
+			<harvested-resources>
+				<resource name="wood"/>									
+			</harvested-resources>
+			<max-load value="15"/>
+			<hits-per-unit value="1"/>				
+		</command>
+
+		<command>
+			<type value="build"/>
+			<name value="build_basic"/>
+			<image path="../snake_warrior/images/magic_build.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<build-skill value="build_skill"/>
+			<buildings>
+				<building name="carnivore_sapling"/>
+				<building name="human_farm"/>
+				<building name="totem"/>
+				<building name="den"/>
+				<building name="obelisk"/>
+				<building name="bone_golem"/>
+				<building name="wicker_behemoth"/>
+			</buildings>
+			<start-sound enabled="false"/>
+			<built-sound enabled="false"/>
+		</command>
+
+		<command>
+			<type value="repair"/>
+			<name value="repair"/>
+			<image path="../snake_warrior/images/magic_repair.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<repair-skill value="repair_skill"/>
+			<repaired-units>
+				<unit name="carnivore_sapling"/>
+				<unit name="carnivore_bush"/>
+				<unit name="carnivore_tree"/>
+				<unit name="human_farm"/>
+				<unit name="totem"/>
+				<unit name="den"/>
+				<unit name="obelisk"/>
+				<unit name="bone_golem"/>
+				<unit name="wicker_behemoth"/>
+			</repaired-units>		
+		</command>
+
+	</commands>
+</unit>

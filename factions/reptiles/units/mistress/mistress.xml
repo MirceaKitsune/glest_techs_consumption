@@ -1,0 +1,227 @@
+<?xml version="1.0" standalone="no"?>
+
+<unit>
+	<parameters>
+		<size value="1"/>
+		<height value="3"/>
+		<max-hp value="2000" regeneration="3"/>
+		<max-ep value="0"/>
+		<armor value="40"/>	
+		<armor-type value="leather"/>
+		<sight value="15"/>
+		<time value="300"/>
+		<max-unit-count value="1"/>
+		<multi-selection value="true"/>	
+		<cellmap value="false"/>
+		<levels>
+			<level name="respected" kills="10"/>
+			<level name="liked" kills="20"/>
+			<level name="loved" kills="30"/>
+			<level name="worshipped" kills="40"/>
+			<level name="goddess" kills="50"/>
+		</levels>
+		<fields>
+			<field value="land"/>
+		</fields>	
+		<properties/>
+			<light enabled="false"/>
+		<unit-requirements>
+			<unit name="totem" />
+		</unit-requirements>
+		<upgrade-requirements>
+			<upgrade name="life_infusion"/>
+		</upgrade-requirements>
+		<resource-requirements>
+			<resource name="gold" amount="500"/>
+			<resource name="wood" amount="350"/>
+			<resource name="food" amount="15"/>			
+		</resource-requirements>
+		<resources-stored/>
+		<image path="images/mistress.bmp"/>
+		<image-cancel path="../snake_warrior/images/magic_cancel.bmp"/>
+		<meeting-point value="false"/>
+		<selection-sounds enabled="true">
+			<sound path="sounds/princess_select1.wav"/>
+			<sound path="sounds/princess_select2.wav"/>
+			<sound path="sounds/princess_select3.wav"/>
+			<sound path="sounds/princess_select4.wav"/>
+			<sound path="sounds/princess_select5.wav"/>
+			<sound path="sounds/princess_select6.wav"/>
+			<sound path="sounds/princess_select7.wav"/>
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="sounds/princess_ack1.wav"/>
+			<sound path="sounds/princess_ack2.wav"/>
+			<sound path="sounds/princess_ack3.wav"/>
+			<sound path="sounds/princess_ack4.wav"/>
+			<sound path="sounds/princess_ack5.wav"/>
+			<sound path="sounds/princess_ack6.wav"/>
+			<sound path="sounds/princess_ack7.wav"/>
+		</command-sounds>
+
+	</parameters>
+
+	<skills>
+	
+		<skill>
+			<type value="stop"/>
+			<name value="stop_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="40"/>
+			<animation path="models/anubis_standing.g3d"/>
+			<sound enabled="false"/>
+
+			<attack-boost>
+				<allow-multiple-boosts value="false" />
+				<radius value="10" />
+				<target value="ally" include-self="false">
+					<unit-type name="snake_warrior"/>
+					<unit-type name="snake_harvester"/>
+					<unit-type name="drake_warrior"/>
+					<unit-type name="drake_harvester"/>
+					<unit-type name="dragon_warrior"/>
+					<unit-type name="dragon_harvester"/>
+				</target>
+				<max-hp value="100" regeneration="5" value-percent-multipler="false"/>
+				<particles value="true">
+					<originator-particle-file path="glow_particles.xml"/>
+					<affected-particle-file path="glow_particles.xml"/>
+				</particles>
+			</attack-boost>
+		</skill>
+		
+		<skill>
+			<type value="move"/>
+			<name value="move_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="250"/>
+			<anim-speed value="120"/>
+			<animation path="models/anubis_walking.g3d"/>
+			<sound enabled="false"/>
+
+			<attack-boost>
+				<allow-multiple-boosts value="false" />
+				<radius value="10" />
+				<target value="ally" include-self="false">
+					<unit-type name="snake_warrior"/>
+					<unit-type name="snake_harvester"/>
+					<unit-type name="drake_warrior"/>
+					<unit-type name="drake_harvester"/>
+					<unit-type name="dragon_warrior"/>
+					<unit-type name="dragon_harvester"/>
+				</target>
+				<max-hp value="100" regeneration="5" value-percent-multipler="false"/>
+				<particles value="true">
+					<originator-particle-file path="glow_particles.xml"/>
+					<affected-particle-file path="glow_particles.xml"/>
+				</particles>
+			</attack-boost>
+		</skill>
+
+		<skill>
+			<type value="attack"/>
+			<name value="attack_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="250"/>
+			<anim-speed value="250"/>
+			<animation path="models/anubis_attacking.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="sounds/princess_attack1.wav"/>
+				<sound-file path="sounds/princess_attack2.wav"/>
+				<sound-file path="sounds/princess_attack3.wav"/>
+				<sound-file path="sounds/princess_attack4.wav"/>
+				<sound-file path="sounds/princess_attack5.wav"/>
+			</sound> 
+			<attack-strenght value="140"/>
+			<attack-var value="40"/>
+			<attack-range value="1"/>
+			<attack-type value="slashing"/>
+			<attack-fields>
+				<field value="land"/>
+			</attack-fields>
+			<attack-start-time value="0.3"/>
+			<projectile value="false"/>
+			<splash value="false"/>
+
+			<attack-boost>
+				<allow-multiple-boosts value="false" />
+				<radius value="10" />
+				<target value="ally" include-self="false">
+					<unit-type name="snake_warrior"/>
+					<unit-type name="snake_basket"/>
+					<unit-type name="snake_harvester"/>
+					<unit-type name="drake_warrior"/>
+					<unit-type name="drake_rider"/>
+					<unit-type name="drake_harvester"/>
+					<unit-type name="dragon_warrior"/>
+					<unit-type name="dragon_warrior_armored"/>
+					<unit-type name="dragon_harvester"/>
+				</target>
+				<max-hp value="100" regeneration="5" value-percent-multipler="false"/>
+				<particles value="true">
+					<originator-particle-file path="glow_particles.xml"/>
+					<affected-particle-file path="glow_particles.xml"/>
+				</particles>
+			</attack-boost>
+		</skill>
+	
+		<skill>
+			<type value="die"/>
+			<name value="die_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="120"/>
+			<anim-speed value="40"/>
+			<animation path="models/anubis_dying.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="sounds/princess_die1.wav"/>
+				<sound-file path="sounds/princess_die2.wav"/>
+				<sound-file path="sounds/princess_die3.wav"/>
+				<sound-file path="sounds/princess_die4.wav"/>
+			</sound>			
+			<fade value="false"/>
+		</skill>
+	</skills>
+	
+	<commands>
+		
+		<command>
+			<type value="stop"/>
+			<name value="stop"/>
+			<image path="../snake_warrior/images/magic_stop.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+		</command>
+
+		<command>
+			<type value="move"/>
+			<name value="move"/>
+			<image path="../snake_warrior/images/magic_move.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+		</command>
+
+		<command>
+			<type value="attack"/>
+			<name value="attack"/>
+			<image path="images/mistress_attack.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<attack-skill value="attack_skill"/>
+		</command>
+
+		<command>
+			<type value="attack_stopped"/>
+			<name value="hold_position"/>
+			<image path="../snake_warrior/images/magic_hold.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+			<attack-skill value="attack_skill"/>
+		</command>
+
+	</commands>
+</unit>

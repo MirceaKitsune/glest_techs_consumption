@@ -1,0 +1,140 @@
+<?xml version="1.0" standalone="no" ?>
+<unit>
+	<!-- *** parameters *** -->
+	<parameters>
+		<size value="3" />
+		<height value="2" />
+		<max-hp value="6000" regeneration="0"/>
+		<max-ep value="0" />
+		<armor value="0" />
+		<armor-type value="wood"/>				
+		<sight value="10" />
+		<time value="100" />
+		<multi-selection value="false" />
+		<cellmap value="true">
+			<row value="000" /> 
+			<row value="010" /> 
+			<row value="000" /> 
+		</cellmap>
+		<levels/>
+		<fields>
+			<field value="land" />
+		</fields>
+		<properties>
+			<property value="burnable"/>
+		</properties>
+		<light enabled="false"/>
+		<rotationAllowed value="false" />
+		<unit-requirements />
+		<upgrade-requirements />
+		<resource-requirements>
+			<resource name="gold" amount="200"/>
+			<resource name="wood" amount="150"/>
+		</resource-requirements>
+		<resources-stored/>
+		<image path="images/totem.bmp"/>
+		<image-cancel path="../snake_warrior/images/magic_cancel.bmp"/>
+		<meeting-point value="false"/>
+		<selection-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/tech_click.wav"/>
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/tech_click.wav"/>
+		</command-sounds>
+	</parameters>
+	
+	<!-- *** skills *** -->
+	<skills>
+
+		<skill>
+			<type value="be_built" />
+			<name value="be_built_skill"/>		
+			<ep-cost value="0" />
+			<speed value="120"/>
+			<speed value="120"/>
+			<anim-speed value="0" />
+			<animation path="models/totem_construction.g3d" />
+			<sound enabled="false" />
+		</skill>
+
+		<skill>
+			<type value="stop" />
+			<name value="stop_skill"/>		
+			<ep-cost value="0" />
+			<speed value="300" />
+			<anim-speed value="0" />
+			<animation path="models/totem.g3d" />
+			<sound enabled="false" />
+		</skill>	
+
+		<skill>
+			<type value="upgrade"/>
+			<name value="upgrade_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="300"/>
+			<anim-speed value="0"/>
+			<animation path="models/totem.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="die" />
+			<name value="die_skill"/>		
+			<ep-cost value="0" />
+			<speed value="300" />
+			<anim-speed value="0" />
+			<animation path="models/totem_destroyed.g3d" />
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/tech_building_fall5.wav"/>
+			</sound>			
+			<fade value="false"/>
+		</skill>
+
+	</skills>
+	
+	<!-- *** commands *** -->
+	
+	<commands>
+
+		<command>
+			<type value="upgrade"/>
+			<name value="learn_tame_humans" />
+			<image path="../../upgrades/tame_humans/images/tame_humans.bmp" />
+			<unit-requirements />
+			<upgrade-requirements />
+			<upgrade-skill value="upgrade_skill"/>
+			<produced-upgrade name="tame_humans"/>
+		</command>
+
+		<command>
+			<type value="upgrade"/>
+			<name value="life_infusion" />
+			<image path="../../upgrades/life_infusion/images/life_infusion.bmp" />
+			<unit-requirements />
+			<upgrade-requirements />
+			<upgrade-skill value="upgrade_skill"/>
+			<produced-upgrade name="life_infusion"/>
+		</command>
+
+		<command>
+			<type value="upgrade"/>
+			<name value="evolution" />
+			<image path="../../upgrades/evolution/images/evolution.bmp" />
+			<unit-requirements />
+			<upgrade-requirements />
+			<upgrade-skill value="upgrade_skill"/>
+			<produced-upgrade name="evolution"/>
+		</command>
+
+		<command>
+			<type value="upgrade"/>
+			<name value="reproduction" />
+			<image path="../../upgrades/reproduction/images/reproduction.bmp" />
+			<unit-requirements />
+			<upgrade-requirements />
+			<upgrade-skill value="upgrade_skill"/>
+			<produced-upgrade name="reproduction"/>
+		</command>
+
+	</commands>
+</unit>

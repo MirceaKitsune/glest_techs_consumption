@@ -1,0 +1,197 @@
+<?xml version="1.0" standalone="no"?>
+
+<unit>
+	<parameters>
+		<size value="1"/>
+		<height value="2"/>
+		<max-hp value="600" regeneration="5"/>
+		<max-ep value="0" regeneration="0"/>
+		<armor value="20"/>	
+		<armor-type value="organic"/>
+		<sight value="10"/>
+		<time value="40"/>
+		<multi-selection value="true"/>	
+		<cellmap value="false"/>
+		<levels>
+			<level name="hunter" kills="5"/>
+			<level name="terror" kills="10"/>
+			<level name="legend" kills="15"/>
+		</levels>
+		<fields>
+			<field value="land"/>
+		</fields>	
+		<properties/>
+		<light enabled="false"/>
+		<unit-requirements>
+		</unit-requirements>
+		<upgrade-requirements/>
+		<resource-requirements>
+			<resource name="gold" amount="50"/>
+			<resource name="wood" amount="25"/>
+			<resource name="food" amount="10"/>
+		</resource-requirements>
+		<resources-stored/>
+		<image path="images/snake.bmp"/>
+		<image-cancel path="../snake_warrior/images/magic_cancel.bmp"/>
+		<meeting-point value="false"/>
+		<selection-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/genie_select1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_select2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_select3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_select4.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_select5.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_select6.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_select7.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_select8.wav"/>
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/genie_ack1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_ack2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_ack3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_ack4.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_ack5.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/genie_ack6.wav"/>
+		</command-sounds>
+	</parameters>
+
+	<skills>
+	
+		<skill>
+			<type value="stop"/>
+			<name value="stop_skill"/>
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="60"/>
+			<animation path="models/snake_standing.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+				
+		<skill>
+			<type value="move"/>
+			<name value="move_skill"/>
+			<ep-cost value="0"/>
+			<speed value="200"/>
+			<anim-speed value="140"/>
+			<animation path="models/snake_walking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="attack"/>
+			<name value="bite_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="90"/>
+			<anim-speed value="90"/>
+			<animation path="models/snake_attacking.g3d"/>
+			<sound enabled="true" start-time="0.4">
+				<sound-file path="$COMMONDATAPATH/sounds/genie_attack1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/genie_attack2.wav"/>
+			</sound>
+			<attack-strenght value="50"/>
+			<attack-var value="20"/>
+			<attack-range value="1"/>
+			<attack-type value="slashing"/>
+			<attack-fields>
+				<field value="land"/>
+			</attack-fields>
+			<attack-start-time value="0"/>
+			<projectile value="false"/>
+			<splash value="false"/>
+		</skill>
+
+		<skill>
+			<type value="morph"/>
+			<name value="morph_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="800"/>
+			<anim-speed value="60"/>
+			<animation path="models/snake_attacking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="die"/>
+			<name value="die_skill"/>	
+			<ep-cost value="0"/>
+			<speed value="120"/>
+			<anim-speed value="60"/>
+			<animation path="models/snake_dying.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/genie_die1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/genie_die2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/genie_die3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/genie_die4.wav"/>
+			</sound>
+			<fade value="false"/>
+		</skill>
+
+	</skills>
+
+	<!-- *** commands *** -->
+	
+	<commands>
+		
+		<command>
+			<type value="stop"/>
+			<name value="stop"/>
+			<image path="../snake_warrior/images/magic_stop.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+		</command>
+
+		<command>
+			<type value="move"/>
+			<name value="move"/>
+			<image path="../snake_warrior/images/magic_move.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+		</command>
+
+		<command>
+			<type value="attack"/>
+			<name value="bite"/>
+			<image path="images/snake_attack.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<attack-skill value="bite_skill"/>
+		</command>
+
+		<command>
+			<type value="attack_stopped"/>
+			<name value="hold_position"/>
+			<image path="../snake_warrior/images/magic_hold.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+			<attack-skill value="bite_skill"/>
+		</command>
+
+		<command>
+			<type value="morph"/>
+			<name value="mount_basket"/>
+			<image path="../snake_basket/images/snake.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<morph-skill value="morph_skill"/>
+			<morph-unit name= "snake_basket"/>
+			<discount value="0"/>
+		</command>
+
+		<command>
+			<type value="morph"/>
+			<name value="evolve_limbs"/>
+			<image path="../drake_warrior/images/drake.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements>
+				<upgrade name="evolution"/>
+			</upgrade-requirements>
+			<morph-skill value="morph_skill"/>
+			<morph-unit name= "drake_warrior"/>
+			<discount value="25"/>
+		</command>
+
+	</commands>
+</unit>

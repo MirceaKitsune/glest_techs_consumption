@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<projectile-particle-system>
+    	<texture value="true" path="images/archmage_particle.bmp" luminance="false"/>
+    	<model value="true" path="models/worker_projectile.g3d"/>
+	<primitive value="quad"/>
+	<offset x="0" y="0" z="0"/>
+	<color red="0.075" green="0.1" blue="0.0" alpha="1.0" />
+	<color-no-energy red="0.075" green="0.1" blue="0.0" alpha="0.5" />
+    	<size value="0.5" />
+    	<size-no-energy value="2.0" />
+    	<speed value="10.0" />
+	<gravity value="1.0"/>
+    	<emission-rate value="10" />
+    	<energy-max value="5" />
+    	<energy-var value="10" />
+	<trajectory type="parabolic">
+		<speed value="6.0"/>
+		<scale value="2"/>
+	</trajectory>
+</projectile-particle-system>

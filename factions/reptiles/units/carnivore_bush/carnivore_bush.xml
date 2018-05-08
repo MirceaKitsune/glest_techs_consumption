@@ -1,0 +1,194 @@
+<?xml version="1.0" standalone="no" ?>
+<unit>
+	<!-- *** parameters *** -->
+	<parameters>
+		<size value="2" />
+		<height value="3" />
+		<max-hp value="4000" regeneration="3"/>
+		<max-ep value="0" />
+		<armor value="10" />
+		<armor-type value="wood"/>		
+		<sight value="10" />
+		<time value="150" />
+		<multi-selection value="false" />
+		<cellmap value="false" />
+		<levels/>
+		<fields>
+			<field value="land" />
+		</fields>
+		<properties>
+			<property value="burnable"/>
+		</properties>
+		<light enabled="false"/>
+		<unit-requirements />
+		<upgrade-requirements>
+			<upgrade name="retain_body_fat"/>
+		</upgrade-requirements>
+		<resource-requirements>
+			<resource name="gold" amount="150" />
+			<resource name="wood" amount="125" />
+			<resource name="people" amount="30" />
+			<resource name="food" amount="-50" />
+		</resource-requirements>
+		<resources-stored>
+			<resource name="wood" amount="500" />
+			<resource name="food" amount="150" />
+		</resources-stored>
+		<image path="images/tree.bmp"/>
+		<image-cancel path="../snake_warrior/images/magic_cancel.bmp"/>
+		<meeting-point value="true" image-path="images/meeting_point.bmp"/>
+		<selection-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/tech_click.wav" />
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/tech_click.wav" />
+		</command-sounds>
+	</parameters>
+	
+	<!-- *** skills *** -->
+	<skills>
+
+		<skill>
+			<type value="be_built" />	
+			<name value="be_built_skill"/>		
+			<ep-cost value="0" />
+			<speed value="300" />
+			<anim-speed value="30" />
+			<animation path="models/tree_construction.g3d"/>
+			<sound enabled="false" />
+		</skill>
+
+		<skill>
+			<type value="stop"/>
+			<name value="stop_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="100"/>
+			<anim-speed value="30"/>
+			<animation path="models/tree.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="attack"/>
+			<name value="attack_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="100"/>
+			<anim-speed value="180"/>
+			<animation path="models/tree.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="$COMMONDATAPATH/sounds/ab_attack1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/ab_attack2.wav"/>
+			</sound> 
+			<attack-strenght value="60"/>
+			<attack-var value="10"/>
+			<attack-range value="2"/>
+			<attack-type value="slashing"/>
+			<attack-fields>
+				<field value="land"/>
+			</attack-fields>
+			<attack-start-time value="0"/>
+			<projectile value="false"/>
+			<splash value="false"/>
+		</skill>
+
+		<skill>
+			<type value="produce"/>
+			<name value="produce_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="300"/>
+			<anim-speed value="60"/>
+			<animation path="models/tree_summon.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="upgrade"/>
+			<name value="upgrade_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="300"/>
+			<anim-speed value="15"/>
+			<animation path="models/tree_summon.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="morph"/>
+			<name value="morph_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="400"/>
+			<anim-speed value="20"/>
+			<animation path="models/tree_summon.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="die"/>
+			<name value="die_skill"/>		
+			<ep-cost value="0" />
+			<speed value="300"/>
+			<anim-speed value="100" />
+			<animation path="models/tree_destroyed.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/tech_building_fall5.wav"/>
+			</sound>			
+			<fade value="false"/>
+		</skill>
+
+	</skills>
+
+	<!-- *** commands *** -->
+	<commands>
+
+		<command>
+			<type value="produce"/>
+			<name value="hatch_snake_warrior" />
+			<image path="../snake_warrior/images/snake.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<produce-skill value="produce_skill"/>
+			<produced-unit name="snake_warrior"/>
+		</command>
+
+		<command>
+			<type value="produce"/>
+			<name value="hatch_drake_warrior" />
+			<image path="../drake_warrior/images/drake.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<produce-skill value="produce_skill"/>
+			<produced-unit name="drake_warrior"/>
+		</command>
+
+		<command>
+			<type value="upgrade"/>
+			<name value="research_extra_blood_cells" />
+			<image path="../../upgrades/extra_blood_cells/images/extra_blood_cells.bmp" />
+			<unit-requirements />
+			<upgrade-requirements />
+			<upgrade-skill value="upgrade_skill"/>
+			<produced-upgrade name="extra_blood_cells"/>
+		</command>
+
+		<command>
+			<type value="attack_stopped"/>
+			<name value="swing_attack"/>
+			<image path="images/tree_attack.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+			<attack-skill value="attack_skill"/>
+		</command>
+
+		<command>
+			<type value="morph"/>
+			<name value="grow_into_tree"/>
+			<image path="../carnivore_tree/images/tree.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<morph-skill value="morph_skill"/>
+			<morph-unit name="carnivore_tree"/>
+			<discount value="25"/>
+		</command>
+
+	</commands>
+</unit>

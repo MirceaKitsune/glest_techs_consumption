@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+
+<faction>
+	<starting-resources>
+		<resource name="gold" amount="600"/>
+		<resource name="wood" amount="400"/>
+		<resource name="people" amount="10"/>
+		<resource name="food" amount="50"/>
+	</starting-resources>
+	<starting-units>
+		<unit name="castle" amount="1"/>
+		<unit name="worker" amount="3"/>
+		<unit name="priest" amount="2"/>
+		<unit name="swordman" amount="3"/>
+		<unit name="cow" amount="2"/>
+	</starting-units>
+	<music value="true" path="music/return_to_nowhere.ogg"/>
+</faction>

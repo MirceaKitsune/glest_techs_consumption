@@ -1,0 +1,248 @@
+<?xml version="1.0" standalone="no"?>
+
+<unit>
+	<parameters>
+		<size value="1"/>
+		<height value="2"/>
+		<max-hp value="500" regeneration="0"/>
+		<max-ep value="50" regeneration="1"/>
+		<armor value="0"/>	
+		<armor-type value="leather"/>				
+		<sight value="9"/>
+		<time value="70"/>
+		<multi-selection value="true"/>
+		<cellmap value="false"/>
+		<levels>
+			<level name="holy" kills="3"/>
+		</levels>
+		<fields>
+			<field value="land"/>
+		</fields>	
+		<properties/>
+		<light enabled="false"/>
+		<unit-requirements/>
+		<upgrade-requirements/>
+		<resource-requirements>
+			<resource name="gold" amount="75"/>
+			<resource name="food" amount="5"/>
+			<resource name="people" amount="1"/>
+		</resource-requirements>
+		<resources-stored/>
+		<resources-death>
+			<resource name="people" amount-value="1" loss-value="0" allow-negative="false" />
+		</resources-death>
+		<image path="images/priest.bmp"/>
+		<image-cancel path="../archer/images/tech_cancel.bmp"/>
+		<meeting-point value="false"/>
+		<selection-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/initiate_select1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_select2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_select3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_select4.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_select5.wav"/>
+		</selection-sounds>
+		<command-sounds enabled="true">
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack1.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack2.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack3.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack4.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack5.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack6.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack7.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack8.wav"/>
+			<sound path="$COMMONDATAPATH/sounds/initiate_ack9.wav"/>
+		</command-sounds>
+	</parameters>
+
+	<skills>
+	
+		<skill>
+			<type value="stop"/>
+			<name value="stop_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="70"/>
+			<animation path="models/initiate_standing.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="stop"/>
+			<name value="stop_recruit_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="70"/>
+			<animation path="models/initiate_standing_recruit.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="150"/>
+			<anim-speed value="130"/>
+			<animation path="models/initiate_walking.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_recruit_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="150"/>
+			<anim-speed value="130"/>
+			<animation path="models/initiate_walking_recruit.g3d"/>
+			<sound enabled="false"/>
+		</skill>
+
+		<skill>
+			<type value="repair"/>
+			<name value="heal_skill"/>		
+			<ep-cost value="5"/>
+			<speed value="50"/>
+			<anim-speed value="150"/>
+			<animation path="models/initiate_healing.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_build1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_build2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_build3.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="harvest"/>
+			<name value="recruit_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="2"/>
+			<anim-speed value="80"/>
+			<animation path="models/initiate_recruiting.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_harvest1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_harvest2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_harvest3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_harvest4.wav"/>
+			</sound>
+		</skill>
+
+		<skill>
+			<type value="attack"/>
+			<name value="attack_skill"/>		
+			<ep-cost value="10"/>
+			<speed value="40"/>
+			<anim-speed value="40"/>
+			<animation path="models/initiate_attacking.g3d"/>
+			<sound enabled="true" start-time="0.2">
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack4.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack5.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack6.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack7.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_attack8.wav"/>
+			</sound>
+			<attack-strenght value="60"/>
+			<attack-var value="30"/>
+			<attack-range value="4"/>
+			<attack-type value="energy"/>
+			<attack-fields>
+				<field value="land"/>
+			</attack-fields>
+			<attack-start-time value="0.45"/>
+			<projectile value="true">
+				<particle value="true" path="particle_proj.xml"/>
+				<sound enabled="true">
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_hit1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_hit2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_hit3.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_hit4.wav"/>
+			</sound>
+			</projectile>
+			<splash value="false"/>
+		</skill>	
+
+		<skill>
+			<type value="die"/>
+			<name value="die_skill"/>		
+			<ep-cost value="0"/>
+			<speed value="150"/>
+			<anim-speed value="150"/>
+			<animation path="models/initiate_dying.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_die1.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_die2.wav"/>
+				<sound-file path="$COMMONDATAPATH/sounds/initiate_die3.wav"/>
+			</sound>			
+			<fade value="false"/>
+		</skill>
+
+	</skills>
+
+	<commands>
+		
+		<command>
+			<type value="stop"/>
+			<name value="stop"/>
+			<image path="../archer/images/tech_stop.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+		</command>
+
+		<command>
+			<type value= "move"/>
+			<name value="move"/>
+			<image path="../archer/images/tech_move.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+		</command>
+
+		<command>
+			<type value="attack"/>
+			<name value="attack"/>
+			<image path="images/priest_attack.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<attack-skill value="attack_skill"/>
+		</command>
+
+		<command>
+			<type value="repair"/>
+			<name value="heal"/>
+			<image path="images/priest_heal.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<repair-skill value="heal_skill"/>
+			<repaired-units>
+				<unit name="priest"/>	
+				<unit name="worker"/>	
+				<unit name="technician"/>		
+				<unit name="swordman"/>	
+				<unit name="archer"/>		
+				<unit name="guard"/>
+				<unit name="horseman"/>					
+			</repaired-units>		
+		</command>
+
+		<command>
+			<type value="harvest"/>
+			<name value="recruit"/>
+			<image path="images/priest_recruit.bmp"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<harvest-skill value="recruit_skill"/>
+			<stop-loaded-skill value="stop_recruit_skill"/>
+			<move-loaded-skill value="move_recruit_skill"/>
+			<harvested-resources>
+				<resource name="people"/>
+			</harvested-resources>
+			<max-load value="1"/>
+			<hits-per-unit value="1"/>				
+		</command>
+	</commands>
+</unit>
